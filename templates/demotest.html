@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4 "><h1>Demo Test</h1></div><hr>
+<form method="post" action="{{ url_for('demotest') }}">
+    <div class="container mb-4">
+{% for q in questions %}
+<div class="container mb-4 mt-4">
+    <strong>Question {{ q.id }}: </strong>{{ q.ques }}<br>
+        <input type="radio" name="{{q.id}}" value="{{q.ch1}}" id="{{q.ch1}}"><label for="{{q.ch1}}" >{{ q.ch1 }}</label><br>
+        <input type="radio" name="{{q.id}}" value="{{q.ch2}}" id="{{q.ch2}}"><label for="{{q.ch2}}" >{{ q.ch2 }}</label><br>
+        <input type="radio" name="{{q.id}}" value="{{q.ch3}}" id="{{q.ch3}}"><label for="{{q.ch3}}" >{{ q.ch3 }}</label><br>
+        <input type="radio" name="{{q.id}}" value="{{q.ch4}}" id="{{q.ch4}}"><label for="{{q.ch4}}" >{{ q.ch4 }}</label><br>
+</div>
+{% endfor %}
+<div class="ml-4"><a href="{{ url_for('demotest') }}" class="btn btn-primary">Submit  </a></div>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://source.unsplash.com/1400x300/?studies,test" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://source.unsplash.com/1400x300/?studies,exams" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://source.unsplash.com/1400x300/?studies,books" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<!--
+<div class="container my-4 d-flex justify-content-center shadow p-3 mb-5 bg-white rounded ">
+    <form action="#" method="post">
+        <h3 class="p-3 mb-2 bg-primary text-white">SIGN UP</h3>
+        <div class="form-row">
+            <div class="form-group  ">
+                <label for="name">Name</label>
+                <input type="text" name="name" class="form-control" id="name" required placeholder="john">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="mobile">Mobile number.</label>
+                <input type="tel" name="mobile" class="form-control" id="mobile" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input type="email" name="email" class="form-control" id="inputEmail4" required placeholder="john@gmail.com">
+                <small id="emailHelp" class="form-text text-muted">A verification link will be sent after registration in email , Please click on verification link!</small>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Password</label>
+                <input type="password" name="pswd" class="form-control" id="inputPassword4" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input type="text" name="addr" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
+        </div>
+        <div class="form-group">
+            <label for="inputAddress2">Address 2</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"
+                   required>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" name="city" class="form-control" id="inputCity" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">State</label>
+                <select id="inputState" class="form-control" name="state">
+                    <option selected>Choose...</option>
+                    {% for item in states %}
+                    <option>{{item}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input type="text" name="zip" class="form-control" id="inputZip">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+        <br>
+        <a href="{{url_for('login')}}">Already have an account</a>
+    </form>
+</div>
+-->
+{% endblock %}

@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container bootstrap snippets bootdey">
+    <div>
+        <h1 class="mt-2 mb-4">{{ current_user.name }}</h1></div>
+     <div class="pull-right">
+         <i class="fa fa-edit mr-2"></i><a href="{{url_for('updateinfo')}}">Edit</a>
+        </div>
+<div class="panel-body inf-content">
+    <div class="row">
+        <div class="col-md-4">
+            <img alt="" style="width:600px;" title="" class="img-circle img-thumbnail isTooltip" src="{{ image_file }}">
+        </div>
+        <div class="col-md-6">
+            <strong>Profile Info:</strong><br>
+            <div class="table-responsive">
+            <table class="table table-user-information">
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>
+                                <span class="glyphicon glyphicon-asterisk text-primary"></span>
+                                User ID:
+                            </strong>
+                        </td>
+                        <td class="text-primary">
+                            {{ current_user.id }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>
+                                <span class="glyphicon glyphicon-user  text-primary"></span>
+                                Name:
+                            </strong>
+                        </td>
+                        <td class="text-primary">
+                            {{ current_user.name }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>
+                                <span class="glyphicon glyphicon-cloud text-primary"></span>
+                                Email:
+                            </strong>
+                        </td>
+                        <td class="text-primary">
+                            {{ current_user.email }}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <strong>
+                                <span class="glyphicon glyphicon-bookmark text-primary"></span>
+                                Mobile:
+                            </strong>
+                        </td>
+                        <td class="text-primary">
+                            {{ current_user.mobile }}
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <strong>
+                                <span class="glyphicon glyphicon-eye-open text-primary"></span>
+                                Address:
+                            </strong>
+                        </td>
+                        <td class="text-primary">
+                            {{ current_user.address }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>
+                                <span class="glyphicon glyphicon-envelope text-primary"></span>
+                                City:
+                            </strong>
+                        </td>
+                        <td class="text-primary">
+                            {{ current_user.city }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>
+                                <span class="glyphicon glyphicon-calendar text-primary"></span>
+                                State:
+                            </strong>
+                        </td>
+                        <td class="text-primary">
+                            {{ current_user.state }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>
+                                <span class="glyphicon glyphicon-calendar text-primary"></span>
+                                Zip:
+                            </strong>
+                        </td>
+                        <td class="text-primary">
+                             {{ current_user.zip }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>BSR-Academy</title>
+
+</head>
+<body style="font-family:Times;">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="{{url_for('signup')}}">Academy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{url_for('signup')}}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('enroll')}}">How To Enroll</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('syllabus')}}">Syllabus</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('demotest')}}">Demo Test</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('contact')}}">Contact Us</a>
+            </li>
+        </ul>
+        <div>
+            {% if current_user.is_authenticated %}
+             <a href="{{ url_for('account') }}" class="btn btn-success mr-2"><i class="fa fa-user mr-2"></i>Profile</a>
+             <a href="{{ url_for('logout') }}" class="btn btn-success">LogOut</a>
+            {% else %}
+             <a href="{{ url_for('signup') }}" class="btn btn-success mr-2">Sign In</a>
+             <a href="{{ url_for('login') }}" class="btn btn-success">Login</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+{% with messages = get_flashed_messages(with_categories=true) %}
+ {% if messages %}
+  {% for category, message in messages %}
+        <div class="alert alert-{{ category}} ">
+            {{message}}
+        </div>
+    {% endfor %}
+     {% endif %}
+{% endwith %}
+{% block content     %}
+
+{% endblock %}
+<! footer -->
+<div class="container-fluid bg-primary text-white">
+    <footer class="container py-5">
+        <div class="row">
+            <div class="col-12 col-md">
+                <small class="d-block mb-3 text-white">© 2020-2021</small>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-white" href="{{url_for('signup')}}">Home</a></li>
+                    <li><a class="text-white" href="{{url_for('enroll')}}">How to enroll</a></li>
+                    <li><a class="text-white" href="{{url_for('demotest')}}">Demo Test</a></li>
+                    <li><a class="text-white" href="#">About Us</a></li>
+                    <li><a class="text-white" href="{{url_for('contact')}}">Contact Us</a></li>
+                    <li><a class="text-white" href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Test Series</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-white" href="#">Demo</a></li>
+                    <li><a class="text-white" href="#">CGPSC ACF TEST SERIES 2020</a></li>
+                    <li><a class="text-white" href="#">CGPSC-ACF-MODULE II</a></li>
+                    <li><a class="text-white" href="#">CGPSC PRE 2020</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Reach Us</h5>
+                <p class="text-white">
+                    H No.-19,Near Shani Mandir New Khursipar,Bhilai-490011(C.G.)
+                    7974932363
+                </p>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Get In Touch</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-white" href="#">Team</a></li>
+                    <li><a class="text-white" href="#">Locations</a></li>
+                    <li><a class="text-white" href="#">Privacy</a></li>
+                    <li><a class="text-white  " href="#">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+</html>
